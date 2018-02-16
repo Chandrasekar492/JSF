@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:dataTable value="#{welBean.user}" var="o">
+	<h:column>
+		<!-- column header -->
+		<f:facet name="header">Order No</f:facet>
+		<!-- row record -->
+    				#{o.id}
+    			</h:column>
+
+	<h:column>
+		<f:facet name="header">Product Name</f:facet>
+    				#{o.name}
+    			</h:column>
+
+	<h:column>
+		<f:facet name="header">Price</f:facet>
+    				#{o.address}
+    			</h:column>
+
+	<h:column>
+		<f:facet name="header">Price</f:facet>
+    				#{o.age}
+    			</h:column>
+
+	<h:column>
+		<f:facet name="header">Quantity</f:facet>
+    				#{o.gender}
+    			</h:column>
+
+</h:dataTable>
+<h:dataTable value="#{welBean.userDetails}" var="d" border="1">
+	<h:column>
+		<!-- column header -->
+		<f:facet name="header">Order No</f:facet>
+		<!-- row record -->
+    				#{d.id}
+    			</h:column>
+
+	<h:column>
+		<f:facet name="header">Product Name</f:facet>
+    				#{d.name}
+    			</h:column>
+
+	<h:column>
+		<f:facet name="header">Price</f:facet>
+    				#{d.address}
+    			</h:column>
+
+	<h:column>
+		<f:facet name="header">Price</f:facet>
+    				#{d.age}
+    			</h:column>
+
+	<h:column>
+		<f:facet name="header">Quantity</f:facet>
+    				#{d.gender}
+    			</h:column>
+
+</h:dataTable>
+
+
+</html>

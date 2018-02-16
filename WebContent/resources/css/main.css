@@ -1,0 +1,36 @@
+@charset "ISO-8859-1";
+
+h2{
+	color:red;
+	text-align: center;
+}
+
+.mainclass{
+background-color: #80ffff;
+width: 100%;
+}
+
+.column{
+	column-width: 20px;
+}
+
+.outputtext{
+	
+	font-family: Tahoma;
+	font-size: 14px;
+	padding-right: 20px;
+}
+.submitbutton{
+	/*background-color: #808000;  Green */
+    border: 1px;
+    color: black;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+	
+}
+.panelcol{
+	 text-align: right;
+}

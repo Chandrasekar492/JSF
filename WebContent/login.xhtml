@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<link rel="stylesheet" type="text/css" href="resources/css/main.css" />
+</h:head>
+
+<h:body>
+
+	<h2>JSF Login Page</h2>
+	<div id= "main" class = "mainclass">
+	
+		<h:form id = "loginform">
+		<h:panelGrid columns="2" columnClasses="panelcol" >
+		
+		
+			<h:outputText styleClass="outputtext" id = "outuser" value="Useranme  "></h:outputText>
+			<h:inputText id="input" value="#{myBean.name}"></h:inputText>
+		
+			<h:outputText styleClass="outputtext" id = "outpass" value="Password  "></h:outputText>
+			<h:inputSecret id="hidden" value="#{myBean.password}"></h:inputSecret>
+			
+			<h:commandButton id="inertaction" value="submit"
+				action="#{myBean.insertDB}" styleClass="submitbutton"></h:commandButton>
+				</h:panelGrid>
+				<h:panelGrid>
+				
+		</h:panelGrid>
+		</h:form>
+		
+	</div>
+</h:body>
+
+</html>
