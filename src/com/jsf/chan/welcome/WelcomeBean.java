@@ -61,6 +61,7 @@ public class WelcomeBean implements Serializable {
 
 	public void updategender(ActionEvent e) {
 		items = new ArrayList<>();
+		logger.info("Inside Logger :");
 		items.add("Male");
 		items.add("Female");
 	}
