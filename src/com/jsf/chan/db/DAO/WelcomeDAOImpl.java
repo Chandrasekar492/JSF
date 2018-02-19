@@ -65,4 +65,19 @@ public class WelcomeDAOImpl implements WelcomeDAO {
 		return i;
 	}
 
+	@Override
+	public int deletedata(Connection conn) {
+		int i = 0;
+		String sql = "DELETE FROM EMPLOYEE";
+		try {
+			PreparedStatement ptst = conn.prepareStatement(sql);
+			i = ptst.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return i;
+	}
+
 }

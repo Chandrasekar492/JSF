@@ -10,4 +10,6 @@ public interface WelcomeDAO {
 	public List<User> getDetails(Connection conn);
 	
 	public int saveDetails(Connection connection, User user) ;
+	
+	public int deletedata(Connection conn);
 }

@@ -38,12 +38,17 @@
 			<f:selectItems value="#{welBean.items}"/>
 			</h:selectOneRadio>
 		</h:panelGrid>
+		<h:panelGrid columns="2">
+		<h:outputText id="gender1" value="Gender of the Employee dropdown"></h:outputText>
+		<h:selectOneMenu id = "inputonemenu" value="#{welBean.selectedItem}">
+			<f:selectItems value = "#{welBean.items}"></f:selectItems>
+		</h:selectOneMenu>
+		</h:panelGrid>
+		<h:commandButton value = "Delete All Users" action="#{welBean.deletedata}"></h:commandButton>
 		
-		<!-- <h:selectOneRadio id="oneradio" value="#{welBean.selectedItem}">
-			<f:selectItems value="#{welBean.items}"/>
-			
-		</h:selectOneRadio> -->
-	<h:commandButton value="submit" action="#{welBean.proccess}" />
+		<h:commandButton value="UpdateGender" actionListener="#{welBean.updategender}" ></h:commandButton>
+		
+	<h:commandButton value="Submit" action="#{welBean.proccess}" />
 
 	</h:form>
 </h:body>

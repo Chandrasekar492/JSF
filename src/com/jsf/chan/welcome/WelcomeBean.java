@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.event.ActionEvent;
+
 import org.apache.log4j.Logger;
 
 import com.jsf.chan.db.DAO.WelcomeDAO;
@@ -14,8 +16,8 @@ import com.jsf.chan.db.DAO.WelcomeDAOImpl;
 import com.jsf.chan.db.Model.User;
 import com.jsf.chan.db.Utils.DBConnection;
 
-public class WelcomeBean implements Serializable{
-	
+public class WelcomeBean implements Serializable {
+
 	/**
 	 * 
 	 */
@@ -27,9 +29,7 @@ public class WelcomeBean implements Serializable{
 	private String selectedItem;
 	private User user;
 	private List<User> userDetails;
-	
 
-	
 	public User getUser() {
 		return user;
 	}
@@ -49,17 +49,21 @@ public class WelcomeBean implements Serializable{
 	public WelcomeBean() {
 		loadradio();
 	}
-	
+
 	private void loadradio() {
 		user = new User();
 		items = new ArrayList<>();
-		//selectedItem = "Item 1";
+		// selectedItem = "Item 1";
 		items.add("Yes");
 		items.add("No");
 		items.add("Tied");
 	}
 
-	
+	public void updategender(ActionEvent e) {
+		items = new ArrayList<>();
+		items.add("Male");
+		items.add("Female");
+	}
 
 	public String getSelectedItem() {
 		return selectedItem;
@@ -73,33 +77,51 @@ public class WelcomeBean implements Serializable{
 		return items;
 	}
 
-	public String proccess() throws SQLException {
-		
+	public String deletedata() throws SQLException {
+		Connection conn = null;
+		try {
 		DBConnection db = new DBConnection();
-		Connection  conn = db.getConnection();
+		conn = db.getConnection();
 		WelcomeDAO dao = new WelcomeDAOImpl();
+		int rowsDeleted = dao.deletedata(conn);
+		logger.info("Rows Deleted by User :"+rowsDeleted);
+		}finally {
+			if(conn !=null) {
+				conn.close();
+			}
+		}
+		return null;
+	}
+
+	public String proccess() throws SQLException {
+
+		DBConnection db = new DBConnection();
+		Connection conn = db.getConnection();
+		WelcomeDAO dao = new WelcomeDAOImpl();
+		logger.info("user gender :"+user.getGender());
 		int success = dao.saveDetails(conn, user);
 		userDetails = dao.getDetails(conn);
-		logger.info("User insertion success : " +success);
-		
+		logger.info("User insertion success : " + success);
+
 		String sql1 = "INSERT INTO RADIO VALUES(?)";
 		PreparedStatement ptst = null;
 		try {
 			ptst = conn.prepareStatement(sql1);
 			ptst.setString(1, selectedItem);
 			int j = ptst.executeUpdate();
-			logger.info("Inserted Item : "+j);
-		}catch(SQLException sql) {
+			logger.info("Inserted Item : " + j);
+		} catch (SQLException sql) {
 			sql.printStackTrace();
-		}finally {
-			
-			if(ptst !=null) {
+		} finally {
+			if(conn !=null) {
+				conn.close();
+			}
+			if (ptst != null) {
 				ptst.close();
 			}
 		}
-		
+
 		return "success";
-		
-		
+
 	}
 }
