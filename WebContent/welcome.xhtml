@@ -7,8 +7,8 @@
 
 <h:head>
 	<title>JSF 2.0 Hello World</title>
-	
-	<h:outputStylesheet library="css" name="main.css"  />
+
+	<h:outputStylesheet library="css" name="main.css" />
 </h:head>
 <h:body bgcolor="white">
 	<h2>JSF 2.0 Hello World Example - welcome.xhtml</h2>
@@ -17,38 +17,40 @@
 
 	<h:form>
 		<h:panelGrid columns="2">
-		<h:outputText id = "outputId" value="ID of the Employee"></h:outputText>
-		<h:inputText id="inID" value="#{welBean.user.id}"></h:inputText>
+			<h:outputText id="outputId" value="ID of the Employee"></h:outputText>
+			<h:inputText id="inID" value="#{welBean.user.id}"></h:inputText>
 		</h:panelGrid>
 		<h:panelGrid columns="2">
-		<h:outputText id="name" value="Name of the Employee"></h:outputText>
-		<h:inputText id="inputname" value="#{welBean.user.name}"></h:inputText>
+			<h:outputText id="name" value="Name of the Employee"></h:outputText>
+			<h:inputText id="inputname" value="#{welBean.user.name}"></h:inputText>
 		</h:panelGrid>
 		<h:panelGrid columns="2">
-		<h:outputText id="address" value="Address of the Employee"></h:outputText>
-		<h:inputText id="inputaddress" value="#{welBean.user.address}"></h:inputText>
+			<h:outputText id="address" value="Address of the Employee"></h:outputText>
+			<h:inputText id="inputaddress" value="#{welBean.user.address}"></h:inputText>
 		</h:panelGrid>
 		<h:panelGrid columns="2">
-		<h:outputText id="age" value="Age of the Employee"></h:outputText>
-		<h:inputText id="inputage" value="#{welBean.user.age}"></h:inputText>
+			<h:outputText id="age" value="Age of the Employee"></h:outputText>
+			<h:inputText id="inputage" value="#{welBean.user.age}"></h:inputText>
 		</h:panelGrid>
 		<h:panelGrid columns="2">
-		<h:outputText id="gender" value="Gender of the Employee"></h:outputText>
-		<h:selectOneRadio id="inputradio" value="#{welBean.user.gender}">
-			<f:selectItems value="#{welBean.items}"/>
+			<h:outputText id="gender" value="Gender of the Employee"></h:outputText>
+			<h:selectOneRadio id="inputradio" value="#{welBean.user.gender}">
+				<f:selectItems value="#{welBean.items}" />
 			</h:selectOneRadio>
 		</h:panelGrid>
 		<h:panelGrid columns="2">
-		<h:outputText id="gender1" value="Gender of the Employee dropdown"></h:outputText>
-		<h:selectOneMenu id = "inputonemenu" value="#{welBean.selectedItem}">
-			<f:selectItems value = "#{welBean.items}"></f:selectItems>
-		</h:selectOneMenu>
+			<h:outputText id="gender1" value="Gender of the Employee dropdown"></h:outputText>
+			<h:selectOneMenu id="inputonemenu" value="#{welBean.selectedItem}">
+				<f:selectItems value="#{welBean.items}"></f:selectItems>
+			</h:selectOneMenu>
 		</h:panelGrid>
-		<h:commandButton value = "Delete All Users" action="#{welBean.deletedata}"></h:commandButton>
-		
-		<h:commandButton value="UpdateGender" actionListener="#{welBean.updategender}" ></h:commandButton>
-		
-	<h:commandButton value="Submit" action="#{welBean.proccess}" />
+		<h:commandButton value="Delete All Users"
+			action="#{welBean.deletedata}"></h:commandButton>
+
+		<h:commandButton value="UpdateGender"
+			actionListener="#{welBean.updategender}"></h:commandButton>
+
+		<h:commandButton value="Submit" action="#{welBean.proccess}" />
 
 	</h:form>
 </h:body>
