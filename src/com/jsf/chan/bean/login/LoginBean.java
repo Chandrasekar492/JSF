@@ -1,4 +1,4 @@
-package com.jsf.chan.login;
+package com.jsf.chan.bean.login;
 
 import java.io.Serializable;
 import java.sql.Connection;

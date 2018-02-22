@@ -1,4 +1,4 @@
-package com.jsf.chan.welcome;
+package com.jsf.chan.bean.welcome;
 
 public class RadioModel {
 	
