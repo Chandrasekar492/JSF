@@ -7,12 +7,12 @@ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
 
 	<managed-bean>
 		<managed-bean-name>myBean</managed-bean-name>
-		<managed-bean-class>com.jsf.chan.login.LoginBean</managed-bean-class>
+		<managed-bean-class>com.jsf.chan.bean.login.LoginBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>welBean</managed-bean-name>
-		<managed-bean-class>com.jsf.chan.welcome.WelcomeBean</managed-bean-class>
+		<managed-bean-class>com.jsf.chan.bean.welcome.WelcomeBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 		
 	</managed-bean>
